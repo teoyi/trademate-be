@@ -1,0 +1,10 @@
+TRADEMATE plan 
+
+Objective:
+    To create a web application that users are able to login and create journals. 
+    
+    A user should only have a single user account but is able to create multiple journals depending on the plans that they are on (3 on free tier and unlimited on paid tier)
+    
+    For each journal, the user should be able to create multiple entries. For each journal, it should contain journal information such as title, journal strategy/rules of trade, starting account balance, current account balance, and risk tolerance for each trade
+    
+    Each entry contains image of trade, entered price, exited price, reason for entry, and reason for exiting the trade
