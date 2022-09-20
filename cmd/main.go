@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 
+	_ "github.com/trademate-be/pkg/background"
 	"github.com/trademate-be/pkg/util"
 )
 
