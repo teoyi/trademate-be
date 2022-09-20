@@ -1,0 +1,9 @@
+version: 1 
+packages: 
+  - path: "./internal/controller/sqlc"
+    name: "controller"
+    engine: "postgresql"
+    schema: "./internal/controller/migration"
+    queries: "./internal/controller/query"
+    emit_empty_slices: true
+    emit_interface: true
