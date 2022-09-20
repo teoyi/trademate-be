@@ -2,9 +2,10 @@ package main
 
 import (
 	"database/sql"
-	"fmt"
 	"log"
 
+	"github.com/trademate-be/api/server"
+	"github.com/trademate-be/internal/controller/sqlc/store"
 	_ "github.com/trademate-be/pkg/background"
 	"github.com/trademate-be/pkg/util"
 )
@@ -20,5 +21,11 @@ func main() {
 		log.Fatal("cannot connect to db: ", err)
 	}
 
-	fmt.Println(conn)
+	store := store.NewStore(conn)
+	server := server.NewServer(store)
+
+	err = server.Start(config.ServerAddress)
+	if err != nil {
+		log.Fatal("Failed to start server:", err)
+	}
 }
