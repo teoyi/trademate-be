@@ -5,7 +5,7 @@ import (
 	"log"
 
 	"github.com/trademate-be/api/server"
-	"github.com/trademate-be/internal/controller/sqlc/store"
+	"github.com/trademate-be/internal/repository/sqlc/store"
 	_ "github.com/trademate-be/pkg/background"
 	"github.com/trademate-be/pkg/util"
 )

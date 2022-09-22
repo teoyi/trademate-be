@@ -3,21 +3,21 @@ package store
 import (
 	"database/sql"
 
-	controller "github.com/trademate-be/internal/controller/sqlc"
+	repository "github.com/trademate-be/internal/repository/sqlc"
 )
 
 type Store interface {
-	controller.Querier
+	repository.Querier
 }
 
 type SQLStore struct {
-	*controller.Queries
+	*repository.Queries
 	db *sql.DB
 }
 
 func NewStore(db *sql.DB) Store {
 	return &SQLStore{
 		db:      db,
-		Queries: controller.New(db),
+		Queries: repository.New(db),
 	}
 }

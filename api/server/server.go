@@ -2,7 +2,7 @@ package server
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/trademate-be/internal/controller/sqlc/store"
+	"github.com/trademate-be/internal/repository/sqlc/store"
 )
 
 type Server struct {
