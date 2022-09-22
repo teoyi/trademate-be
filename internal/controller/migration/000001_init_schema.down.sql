@@ -1,3 +1,4 @@
 DROP TABLE IF EXISTS entries; 
-DROP TABLE IF EXISTS transfers; 
-DROP TABLE IF EXISTS account; 
+DROP TABLE IF EXISTS journals; 
+DROP TABLE IF EXISTS subscription_tier;
+DROP TABLE IF EXISTS users;
