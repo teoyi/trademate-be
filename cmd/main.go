@@ -4,8 +4,8 @@ import (
 	"database/sql"
 	"log"
 
-	server "github.com/trademate-be/api"
-	db "github.com/trademate-be/internal/db/sqlc"
+	api "github.com/trademate-be/api"
+	db "github.com/trademate-be/db/sqlc"
 	_ "github.com/trademate-be/pkg/background"
 	"github.com/trademate-be/pkg/util"
 )
@@ -22,7 +22,7 @@ func main() {
 	}
 
 	store := db.NewStore(conn)
-	server := server.NewServer(store)
+	server := api.NewServer(store)
 
 	err = server.Start(config.ServerAddress)
 	if err != nil {

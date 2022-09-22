@@ -1,8 +1,8 @@
-package server
+package api
 
 import (
 	"github.com/gin-gonic/gin"
-	db "github.com/trademate-be/internal/db/sqlc"
+	db "github.com/trademate-be/db/sqlc"
 )
 
 type Server struct {
