@@ -14,6 +14,10 @@ Objective:
     - last_name 
     - subscription_tier
     - created_at
+
+    SUBSCRIPTON_TIER TABLE 
+    - ID (pk) 
+    - name (unique) 
     
     For each journal, the user should be able to create multiple entries. For each journal, it should contain journal information such as title, journal strategy/rules of trade, starting account balance, current account balance, and risk tolerance for each trade
     
