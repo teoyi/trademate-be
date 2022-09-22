@@ -2,7 +2,7 @@
 // versions:
 //   sqlc v1.15.0
 
-package repository
+package db
 
 import (
 	"time"

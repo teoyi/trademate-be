@@ -1,9 +1,9 @@
 version: 1 
 packages: 
-  - path: "./internal/repository/sqlc"
-    name: "repository"
+  - path: "./internal/db/sqlc"
+    name: "db"
     engine: "postgresql"
-    schema: "./internal/repository/migration"
-    queries: "./internal/repository/query"
+    schema: "./internal/db/migration"
+    queries: "./internal/db/query"
     emit_empty_slices: true
     emit_interface: true

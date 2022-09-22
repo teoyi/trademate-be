@@ -4,8 +4,8 @@ import (
 	"database/sql"
 	"log"
 
-	"github.com/trademate-be/api/server"
-	"github.com/trademate-be/internal/repository/sqlc/store"
+	server "github.com/trademate-be/api"
+	db "github.com/trademate-be/internal/db/sqlc"
 	_ "github.com/trademate-be/pkg/background"
 	"github.com/trademate-be/pkg/util"
 )
@@ -21,7 +21,7 @@ func main() {
 		log.Fatal("cannot connect to db: ", err)
 	}
 
-	store := store.NewStore(conn)
+	store := db.NewStore(conn)
 	server := server.NewServer(store)
 
 	err = server.Start(config.ServerAddress)

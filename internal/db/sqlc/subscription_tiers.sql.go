@@ -3,7 +3,7 @@
 //   sqlc v1.15.0
 // source: subscription_tiers.sql
 
-package repository
+package db
 
 import (
 	"context"

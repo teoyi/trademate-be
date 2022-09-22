@@ -2,15 +2,15 @@ package server
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/trademate-be/internal/repository/sqlc/store"
+	db "github.com/trademate-be/internal/db/sqlc"
 )
 
 type Server struct {
-	store  store.Store
+	store  db.Store
 	router *gin.Engine
 }
 
-func NewServer(store store.Store) *Server {
+func NewServer(store db.Store) *Server {
 	server := &Server{store: store}
 	router := gin.Default()
 
