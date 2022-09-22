@@ -8,27 +8,47 @@ import (
 	"time"
 )
 
-type Account struct {
-	ID        int64
-	Owner     string
-	Balance   int64
-	Currency  string
-	CreatedAt time.Time
-}
-
 type Entry struct {
+	ID          int64
+	JournalID   int64
+	Instrument  string
+	Position    string
+	LotSize     string
+	Opening     string
+	Closing     string
+	StopLoss    string
+	TakeProfit  string
+	RiskReward  string
+	Comments    string
+	BeforeImage string
+	AfterImage  string
+	CreatedAt   time.Time
+}
+
+type Journal struct {
+	ID             int64
+	UserID         int64
+	Title          string
+	Strategy       string
+	InitialBalance string
+	CurrentBalance string
+	RiskTolerance  string
+	CreatedAt      time.Time
+}
+
+type SubscriptionTier struct {
 	ID        int64
-	AccountID int64
-	// can be negative or positive
-	Amount    int64
+	Name      string
 	CreatedAt time.Time
 }
 
-type Transfer struct {
-	ID            int64
-	FromAccountID int64
-	ToAccountID   int64
-	// must be positive
-	Amount    int64
-	CreatedAt time.Time
+type User struct {
+	ID               int64
+	Username         string
+	Password         string
+	Email            string
+	FirstName        string
+	LastName         string
+	SubscriptionTier int32
+	CreatedAt        time.Time
 }

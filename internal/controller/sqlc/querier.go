@@ -9,13 +9,26 @@ import (
 )
 
 type Querier interface {
-	AddAccountBalance(ctx context.Context, arg AddAccountBalanceParams) (Account, error)
-	CreateAccount(ctx context.Context, arg CreateAccountParams) (Account, error)
-	DeleteAccount(ctx context.Context, id int64) error
-	GetAccount(ctx context.Context, id int64) (Account, error)
-	GetAccountForUpdate(ctx context.Context, id int64) (Account, error)
-	ListAccounts(ctx context.Context, arg ListAccountsParams) ([]Account, error)
-	UpdateAccount(ctx context.Context, arg UpdateAccountParams) (Account, error)
+	CreateEntry(ctx context.Context, arg CreateEntryParams) (Entry, error)
+	CreateJournal(ctx context.Context, arg CreateJournalParams) (Journal, error)
+	CreateSubscriptionTier(ctx context.Context, name string) (SubscriptionTier, error)
+	CreateUser(ctx context.Context, arg CreateUserParams) (User, error)
+	DeleteEntry(ctx context.Context, id int64) error
+	DeleteJournal(ctx context.Context, id int64) error
+	DeleteSubscriptionTier(ctx context.Context, id int64) error
+	DeleteUser(ctx context.Context, id int64) error
+	GetEntry(ctx context.Context, id int64) (Entry, error)
+	GetJournal(ctx context.Context, id int64) (Journal, error)
+	GetSubscriptionTier(ctx context.Context, id int64) (SubscriptionTier, error)
+	GetUser(ctx context.Context, id int64) (User, error)
+	ListEntries(ctx context.Context, arg ListEntriesParams) ([]Entry, error)
+	ListJournals(ctx context.Context, arg ListJournalsParams) ([]Journal, error)
+	ListSubscriptionTiers(ctx context.Context, arg ListSubscriptionTiersParams) ([]SubscriptionTier, error)
+	ListUsers(ctx context.Context, arg ListUsersParams) ([]User, error)
+	UpdateEntry(ctx context.Context, arg UpdateEntryParams) (Entry, error)
+	UpdateJournal(ctx context.Context, arg UpdateJournalParams) (Journal, error)
+	UpdateSubscriptionTier(ctx context.Context, arg UpdateSubscriptionTierParams) (SubscriptionTier, error)
+	UpdateUser(ctx context.Context, arg UpdateUserParams) (User, error)
 }
 
 var _ Querier = (*Queries)(nil)
