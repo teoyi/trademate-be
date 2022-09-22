@@ -9,7 +9,7 @@ CREATE TABLE "users" (
   "created_at" timestamptz NOT NULL DEFAULT (now())
 );
 
-CREATE TABLE "subscription_tier" (
+CREATE TABLE "subscription_tiers" (
   "id" bigserial PRIMARY KEY,
   "name" varchar UNIQUE NOT NULL,
   "created_at" timestamptz NOT NULL DEFAULT (now())
@@ -59,7 +59,7 @@ CREATE INDEX ON "entries" ("instrument");
 
 CREATE INDEX ON "entries" ("position");
 
-ALTER TABLE "users" ADD FOREIGN KEY ("subscription_tier") REFERENCES "subscription_tier" ("id");
+ALTER TABLE "users" ADD FOREIGN KEY ("subscription_tier") REFERENCES "subscription_tiers" ("id");
 
 ALTER TABLE "journals" ADD FOREIGN KEY ("user_id") REFERENCES "users" ("id");
 
