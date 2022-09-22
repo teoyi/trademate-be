@@ -11,7 +11,8 @@ CREATE TABLE "users" (
 
 CREATE TABLE "subscription_tier" (
   "id" bigserial PRIMARY KEY,
-  "name" varchar UNIQUE NOT NULL
+  "name" varchar UNIQUE NOT NULL,
+  "created_at" timestamptz NOT NULL DEFAULT (now())
 );
 
 CREATE TABLE "journals" (
